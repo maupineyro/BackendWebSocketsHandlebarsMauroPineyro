@@ -1,0 +1,18 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __fileNamePublic = fileURLToPath (import.meta.url);
+//console.log (`la ruta del archivo es ${__fileNamePublic}`)
+
+const __dirNamePublic = path.dirname(__fileNamePublic);
+//console.log (__dirNamePublic);
+
+export default __dirNamePublic
+
+
+
+
+
+//para ejecutar hago >>  node src/public/publicDirName.js
+
+// esta es mi ruta de public >>   C:\Users\El Mauchu\Desktop\coder backend\websocket mauro piñeyro\src\public

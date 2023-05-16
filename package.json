@@ -1,13 +1,16 @@
 {
-  "main": "index.js",
-  "description": "entrega webSockets handlebars",
-  "type": "module",
-  "scripts": {
-    "start": "nodemon src/index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "express-handlebars": "^7.0.7",
-    "nanoid": "^4.0.2"
-  }
+"description":"entrega webSockets handlebars",
+"main":"index.js",
+"type":"module",
+
+"scripts":{
+    "start":"nodemon src/index.js"
+},
+
+"dependencies":{
+    "express":"^4.18.2",
+    "express-handlebars":"^7.0.7",
+    "nanoid":"^4.0.2",
+    "socket.io":"^4.6.1"
+}
 }

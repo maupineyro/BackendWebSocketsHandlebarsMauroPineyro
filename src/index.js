@@ -1,7 +1,10 @@
 //Imports
 import express from "express";
 import {engine} from "express-handlebars";
+import http from 'http';
+import {Server} from "socket.io";
 import __dirNameViews from "./views/solutionDirName.js";
+import __dirNamePublic from "./public/publicDirName.js";
 import homeRouter from "./routes/home.route.js";
 
 //Seteo de App y handlebars
@@ -13,17 +16,29 @@ app.engine ("handlebars", engine());
 app.set ("view engine", "handlebars");
 app.set ("views", __dirNameViews);
 
+//Socket
+const server = http.createServer(app);
+const io = new Server(server);
 
-
-
-
+//Public
+app.use(express.static(__dirNamePublic));
 
 //App Routes
 app.use ('/home', homeRouter); //debe agregar todos los productos agregados hasta el momento
 //app.use ('/realtimeproducts', realtimeRouter); //debe trabajar con webSocket y mostrar cambios a tiempo real
 
 
+//Inicializar socket en el server
+io.on ('connection', (socket) =>{
+    console.log ('User conectado');
+    socket.emit('message','soy el Back');
+    socket.on('msg', (data)=>{
+        console.log(data);
+    })
+
+})
+
 //listen
-app.listen (PORT, () =>{
+server.listen (PORT, () =>{
     console.log (`Server running on ${PORT}`)
 })
