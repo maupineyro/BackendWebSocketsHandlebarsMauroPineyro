@@ -18,7 +18,7 @@ app.engine ("handlebars", engine());
 app.set ("view engine", "handlebars");
 app.set ("views", __dirNameViews);
 
-//Socket
+//Socket IO
 const server = http.createServer(app);
 const io = new Server(server);
 

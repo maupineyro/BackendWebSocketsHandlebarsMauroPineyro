@@ -13,7 +13,12 @@ console.log (newProduct)
 
 //GET (para mostrar los productos guardados)
 productRouter.get ("/", async (req,res) =>{
-res.send (await productManager.getProducts())
+    let limit = parseInt(req.query.limit); // tomo el limit del req de navegación, parseInt para pasar el string a número
+    let fullCollection = await productManager.readProducts(); // es el total de los productos guardados hasta el momento
+    let limitCollection =fullCollection.slice (0, limit); // slice para mostrar productos con limit
+
+    limit ?  res.send (await limitCollection) :  res.send (await productManager.getProducts())
+   
 })
 
 //GET by ID (encontrar producto por su Id en products.json)
@@ -37,3 +42,13 @@ productRouter.put ("/:id", async (req,res) =>{
 })
 
 export default productRouter
+
+//comprobaciones
+
+//cargo http://localhost:8080/api/products
+
+//cargo http://localhost:8080/api/products/2      (no lo tiene que encontrar por el id nanoid)
+
+//cargo http://localhost:8080/api/products/793f2b4c
+
+//cargo http://localhost:8080/api/products/?limit=3 

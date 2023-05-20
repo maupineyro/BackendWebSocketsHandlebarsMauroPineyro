@@ -10,12 +10,12 @@ class CartManager {
     //métodos auxiliares para leer y escribir carritos. También el de encontrar ID
     readCarts = async() =>{
         let readingCarts = await fs.readFile (this.path, "utf-8");
-        let readingCartsParsed = await JSON.parse (readingCarts, null, 2)
+        let readingCartsParsed = await JSON.parse (readingCarts)
         return readingCartsParsed;
     }
 
     writeCarts = async (cart)=> {
-        await fs.writeFile(this.path, JSON.stringify(cart));
+        await fs.writeFile(this.path, JSON.stringify(cart, null, 2));
     }
 
     findCartById = async (cid) =>{

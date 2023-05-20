@@ -1,1 +1,57 @@
-[{"title":"título 1","description":"descripción 1","code":"abc121","price":100,"status":true,"stock":10,"category":"categoría 1","thumbnail":"imagen 1","id":"a380ede3"},{"title":"título 2","description":"descripción 2","code":"abc122","price":100,"status":true,"stock":10,"category":"categoría 2","thumbnail":"imagen 2","id":"0bfd71c6"},{"title":"título 3 actualizado","description":"descripción 3","code":"abc123","price":100,"status":true,"stock":10,"category":"categoría 3","thumbnail":"imagen 3","id":"c622ac26"}]
+[
+  {
+    "title": "título 1",
+    "description": "descripción 1",
+    "code": "abc121",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "categoría 1",
+    "thumbnail": "imagen 1",
+    "id": "a380ede3"
+  },
+  {
+    "title": "título 2",
+    "description": "descripción 2",
+    "code": "abc122",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "categoría 2",
+    "thumbnail": "imagen 2",
+    "id": "0bfd71c6"
+  },
+  {
+    "title": "título 3 actualizado",
+    "description": "descripción 3",
+    "code": "abc123",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "categoría 3",
+    "thumbnail": "imagen 3",
+    "id": "c622ac26"
+  },
+  {
+    "title": "título 4",
+    "description": "descripción 4",
+    "code": "abc124",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "categoría 4",
+    "thumbnail": "imagen 4",
+    "id": "793f2b4c"
+  },
+  {
+    "title": "título 5",
+    "description": "descripción 5",
+    "code": "abc125",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "categoría 5",
+    "thumbnail": "imagen 5",
+    "id": "8611a3cc"
+  }
+]
