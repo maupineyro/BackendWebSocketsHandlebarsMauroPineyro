@@ -6,6 +6,7 @@ import {Server} from "socket.io";
 import __dirNameViews from "./views/solutionDirName.js";
 import __dirNamePublic from "./public/publicDirName.js";
 import homeRouter from "./routes/home.route.js";
+import realTimeRouter from "./routes/realTime.route.js";
 import productRouter from "./routes/productRouter.js";
 import cartRouter from "./routes/cartRouter.js";
 
@@ -27,8 +28,7 @@ app.use(express.static(__dirNamePublic));
 
 //App Routes
 app.use ('/home', homeRouter); //debe agregar todos los productos agregados hasta el momento
-//app.use ('/realtimeproducts', realtimeRouter); //debe trabajar con webSocket y mostrar cambios a tiempo real
-
+app.use ('/realtimeproducts', realTimeRouter); //debe trabajar con webSocket y mostrar cambios a tiempo real
 app.use ("/api/products", productRouter);
 app.use ("/api/cart", cartRouter);
 

@@ -4,10 +4,16 @@ body {
     box-sizing: border-box;
 }
 
-.title-container {
+.titleContainer {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 32px;
   }
+
+.productPost {
+  text-align: center;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}  
 
 .gridContainer {
     display: grid;
@@ -19,7 +25,6 @@ body {
   }
 
 .card {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,5 +70,15 @@ body {
     display: none;
     margin-top: 10px;
     text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    margin-bottom: 10px;
   }
   

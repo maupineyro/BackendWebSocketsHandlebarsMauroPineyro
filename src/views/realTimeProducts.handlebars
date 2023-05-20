@@ -1,0 +1,48 @@
+
+<div class="titleContainer">
+    <h1>Productos disponibles en tiempo real</h1>
+</div>
+
+<div>
+    <div class="productPost">
+    <h2>Cargar Producto</h2>
+    </div>
+    
+    <form id="productForm">
+        <label for="productTitle">Título del producto:</label>
+        <input type="text" id="productTitle" required>
+        <br>
+
+        <label for="productCode">Código del producto:</label>
+        <input type="text" id="productCode" required>
+        <br>
+
+        <label for="productPrice">Precio del producto:</label>
+        <input type="number" id="productPrice" required>
+        <br>
+
+        <label for="productStatus">Status del producto:</label>
+        <input type="boolean" id="productStatus" required>
+        <br>
+
+        <label for="productCategory">Categoría del producto:</label>
+        <input type="text" id="productCategory" required>
+        <br>
+
+        <label for="productImage">Ruta de imagen del producto:</label>
+        <input type="text" id="productImage" required>
+        <br>
+
+
+        <label for="productDescription">Descripción del producto:</label>
+        <textarea id="productDescription" required></textarea>
+        <br>
+
+        <button type="submit">Guardar Producto</button>
+  </form>
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
