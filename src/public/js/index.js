@@ -1,13 +1,40 @@
-//este consolelog se verá en el navegador
-console.log("es el index.js de cliente/public")
+//este es el index.js de cliente
 
-let socket = io ()
-socket.on('message', (data)=>{
-console.log(data);
-socket.emit ('msg', 'hola back soy el cliente')
-})
+//socket (cliente)
+let socket = io ()// este ya genera la conexión del evento 'connection'
 
 
+const productForm = document.getElementById('productForm');
+    productForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Evita que el formulario se envíe al recargar
+
+      const newProduct = { //crea el objeto newProduct con los valores del form
+        title: document.getElementById('productTitle').value,
+        description: document.getElementById('productDescription').value,
+        code: document.getElementById('productCode').value,
+        price: document.getElementById('productPrice').value,
+        status: true,
+        stock: document.getElementById('productStock').value,
+        category:document.getElementById('productStock').value,
+        thumbnail:document.getElementById('productImage').value,
+        //id se debe agregar auto con el método
+      };
+
+      socket.emit('newProduct', newProduct); // Enviar datos del producto al servidor
+      productForm.reset(); // Limpiar el formulario
+    });
+
+
+
+
+
+
+
+
+
+//funciones
+
+//mostrar/ocultar descripción 
 function toggleDescripcion(button) {
     let descripcion = button.nextElementSibling;
   
@@ -21,4 +48,6 @@ function toggleDescripcion(button) {
       button.setAttribute('data-visible', 'false');
     }
   }
+
+//
   

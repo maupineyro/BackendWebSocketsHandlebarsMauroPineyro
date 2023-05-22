@@ -6,13 +6,14 @@ body {
 
 .titleContainer {
     text-align: center;
-    margin: 32px;
+    margin: 16px;
   }
 
 .productPost {
   text-align: center;
-    margin-top: 64px;
+    margin-top: 1rem;
     margin-bottom: 16px;
+    padding-top: 16px;
 }  
 
 .gridContainer {
@@ -78,7 +79,8 @@ body {
     align-items: center;
   }
 
-  label {
-    margin-bottom: 10px;
+  .loadProduct {
+    background-color: #7fb1f6;
+    padding: 10px;
   }
   

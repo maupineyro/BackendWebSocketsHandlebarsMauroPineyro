@@ -19,10 +19,6 @@ app.engine ("handlebars", engine());
 app.set ("view engine", "handlebars");
 app.set ("views", __dirNameViews);
 
-//Socket IO
-const server = http.createServer(app);
-const io = new Server(server);
-
 //Public
 app.use(express.static(__dirNamePublic));
 
@@ -32,14 +28,17 @@ app.use ('/realtimeproducts', realTimeRouter); //debe trabajar con webSocket y m
 app.use ("/api/products", productRouter);
 app.use ("/api/cart", cartRouter);
 
+//Socket IO
+const server = http.createServer(app);
+const io = new Server(server);
 
+//sockets (server)
+io.on ('connection', (socket) =>{ // metodo on, escucha eventos, en este caso el evento 'connection'
+    console.log ('connection: User conectado');
+    socket.emit('message','soy el Back/server'); // método emit emite eventos, en este caso el evento 'message'
 
-//Inicializar socket en el server
-io.on ('connection', (socket) =>{
-    console.log ('User conectado');
-    socket.emit('message','soy el Back');
-    socket.on('msg', (data)=>{
-        console.log(data);
+    socket.on('newProduct', (newProduct)=>{ //debe escuchar el evento emitido por el cliente que trae el objeto newProduct
+        console.log(newProduct);
     })
 
 })
