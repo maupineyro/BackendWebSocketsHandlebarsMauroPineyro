@@ -45,7 +45,7 @@ io.on ('connection', (socket) =>{ // metodo on, escucha eventos, en este caso el
         console.log("el producto enviado via socket es:", newProduct);
     })
 
-    socket.on ('getProducts', (data)=>{
+    socket.on ('getProducts', (fullCollection)=>{ //  PENSAR si es lo correcto??
 
     })
 

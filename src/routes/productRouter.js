@@ -3,6 +3,7 @@ import ProductManager from "../managers/ProductManager.js";
 
 const productManager = new ProductManager;
 const productRouter = Router();
+let socket = io ()
 
 //POST (en post method, desde Body, para "subir" un producto desde cliente)
 productRouter.post ("/", async (req,res) =>{
@@ -17,7 +18,9 @@ productRouter.get ("/", async (req,res) =>{
     let fullCollection = await productManager.readProducts(); // es el total de los productos guardados hasta el momento
     let limitCollection =fullCollection.slice (0, limit); // slice para mostrar productos con limit
 
-    limit ?  res.send (await limitCollection) :  res.send (await productManager.getProducts())
+    limit ? res.send (await limitCollection) : res.send (await productManager.getProducts());
+    socket.emit ('limit', limitCollection);
+    socket.emit ('getProducts', fullCollection);
    
 })
 

@@ -13,7 +13,7 @@ const productForm = document.getElementById('productForm');
         description: document.getElementById('productDescription').value,
         code: document.getElementById('productCode').value,
         price: document.getElementById('productPrice').value,
-        status: true,
+        status: true, // por una actividad de entrega anterior, status siempre en true
         stock: document.getElementById('productStock').value,
         category:document.getElementById('productStock').value,
         thumbnail:document.getElementById('productImage').value,
