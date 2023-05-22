@@ -9,6 +9,9 @@ import homeRouter from "./routes/home.route.js";
 import realTimeRouter from "./routes/realTime.route.js";
 import productRouter from "./routes/productRouter.js";
 import cartRouter from "./routes/cartRouter.js";
+import ProductManager from "./managers/ProductManager.js";
+
+const ProductManagerServer = new ProductManager;
 
 //Seteo de App y handlebars
 const PORT = 8080;
@@ -38,7 +41,12 @@ io.on ('connection', (socket) =>{ // metodo on, escucha eventos, en este caso el
     socket.emit('message','soy el Back/server'); // método emit emite eventos, en este caso el evento 'message'
 
     socket.on('newProduct', (newProduct)=>{ //debe escuchar el evento emitido por el cliente que trae el objeto newProduct
-        console.log(newProduct);
+        ProductManagerServer.addProducts(newProduct);
+        console.log("el producto enviado via socket es:", newProduct);
+    })
+
+    socket.on ('getProducts', (data)=>{
+
     })
 
 })

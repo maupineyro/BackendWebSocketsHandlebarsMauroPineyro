@@ -53,5 +53,16 @@
     "category": "categoría 5",
     "thumbnail": "imagen 5",
     "id": "c87b1f2a"
+  },
+  {
+    "title": "titulo 6 socket",
+    "description": "primer objeto enviado por socket",
+    "code": "abc234",
+    "price": "67",
+    "status": true,
+    "stock": "14",
+    "category": "14",
+    "thumbnail": "imagen 6",
+    "id": "808c98e9"
   }
 ]
