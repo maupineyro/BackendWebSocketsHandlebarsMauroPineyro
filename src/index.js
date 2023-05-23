@@ -44,13 +44,20 @@ io.on ('connection', async (socket) =>{ // metodo on, escucha eventos, en este c
     
     const products = await ProductManagerServer.getProducts();
     
-  socket.emit('initialProducts', products);// Emitir la lista de productos actual al cliente que se conecta
+  socket.emit('initialProducts', products); // Emite la lista de productos actual al cliente que se conecta
+  io.emit('updatedProducts', products); // Emite la lista de productos actual a todos los clientes
     
 
     socket.on('newProduct', (newProduct)=>{ //debe escuchar el evento emitido por el cliente que trae el objeto newProduct
         ProductManagerServer.addProducts(newProduct);
         console.log("el producto enviado via socket es:", newProduct);
 
+    })
+
+    socket.on ('deleteProduct' , (productId) =>{
+        ProductManagerServer.deleteProducts(productId);
+        console.log ("el producto ha sido eliminado");
+        io.emit('updatedProducts', products);
     })
 
     

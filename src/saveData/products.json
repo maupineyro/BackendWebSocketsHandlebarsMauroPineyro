@@ -97,5 +97,16 @@
     "category": "1212",
     "thumbnail": "img pantalon 9",
     "id": "937d3781"
+  },
+  {
+    "title": "titulo 10 ",
+    "description": "bla bla",
+    "code": "1235643111",
+    "price": "1",
+    "status": true,
+    "stock": "1",
+    "category": "1",
+    "thumbnail": "img",
+    "id": "d53480f9"
   }
 ]
