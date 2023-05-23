@@ -44,6 +44,13 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
   }
+
+  card-id {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
   
   .card-title {
     font-size: 24px;

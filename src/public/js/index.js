@@ -24,14 +24,11 @@ const productForm = document.getElementById('productForm');
       productForm.reset(); // Limpiar el formulario
     });
 
+    socket.on ('getProducts', (data) =>{
+      render(data);
+    })
 
-
-
-
-
-
-
-
+    
 //funciones
 
 //mostrar/ocultar descripción 
@@ -47,6 +44,23 @@ function toggleDescripcion(button) {
       button.innerText = 'Mostrar descripción';
       button.setAttribute('data-visible', 'false');
     }
+  }
+
+  //render realtime
+  function render(data){
+
+    const html = data.map (elem =>{
+      return (`
+      <div class="card">
+      <img src="${elem.thumbnail}" alt="Imagen" class="card-image">
+      <h2 class="card-title">${elem.title}</h2>
+      <p class="card-id">ID de producto: ${elem.id}</p>
+      <p class="card-price"> precio: $ ${elem.price}</p>
+      <p class="card-description">${elem.description}</p>
+  </div>
+      `)
+    })
+    document.getElementById ('realTimeGallery').innerHTML = html
   }
 
 //
