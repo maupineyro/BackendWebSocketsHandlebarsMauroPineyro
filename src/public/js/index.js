@@ -24,9 +24,11 @@ const productForm = document.getElementById('productForm');
       productForm.reset(); // Limpiar el formulario
     });
 
-    socket.on ('getProducts', (data) =>{
-      render(data);
-    })
+  // Escuchar el evento 'initialProducts'
+  socket.on('initialProducts', (products) => {
+   
+    render(products); // Actualizar la galería de productos en el cliente
+  });
 
     
 //funciones
@@ -47,9 +49,9 @@ function toggleDescripcion(button) {
   }
 
   //render realtime
-  function render(data){
+  function render(products){
 
-    const html = data.map (elem =>{
+    const html = products.map (elem =>{
       return (`
       <div class="card">
       <img src="${elem.thumbnail}" alt="Imagen" class="card-image">
@@ -59,7 +61,7 @@ function toggleDescripcion(button) {
       <p class="card-description">${elem.description}</p>
   </div>
       `)
-    })
+    }) .join(' ');
     document.getElementById ('realTimeGallery').innerHTML = html
   }
 

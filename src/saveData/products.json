@@ -64,5 +64,38 @@
     "category": "14",
     "thumbnail": "imagen 6",
     "id": "808c98e9"
+  },
+  {
+    "title": "socket title 7",
+    "description": "producto 7 socket",
+    "code": "12345",
+    "price": "2323",
+    "status": true,
+    "stock": "1",
+    "category": "1",
+    "thumbnail": "imagen pantalon 5",
+    "id": "ff4c49c6"
+  },
+  {
+    "title": "objeto 8",
+    "description": "producto 8",
+    "code": "1235643",
+    "price": "12",
+    "status": true,
+    "stock": "122",
+    "category": "122",
+    "thumbnail": "imagen pantalon  8",
+    "id": "028959ec"
+  },
+  {
+    "title": "objeto 9",
+    "description": "descriptc",
+    "code": "qwq23",
+    "price": "564",
+    "status": true,
+    "stock": "1212",
+    "category": "1212",
+    "thumbnail": "img pantalon 9",
+    "id": "937d3781"
   }
 ]

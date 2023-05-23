@@ -35,15 +35,17 @@ app.use ("/api/cart", cartRouter);
 const server = http.createServer(app);
 const io = new Server(server);
 
-//socket (server)
-io.on ('connection', (socket) =>{ // metodo on, escucha eventos, en este caso el evento 'connection'
-    console.log ('connection: User conectado');
-    //socket.emit('message','soy el Back/server'); // método emit emite eventos, en este caso el evento 'message'
-    const data = ProductManagerServer.getProducts();
-    
-    socket.emit ('getProducts', data)
 
-   
+
+ 
+//socket (server)
+io.on ('connection', async (socket) =>{ // metodo on, escucha eventos, en este caso el evento 'connection'
+    console.log ('connection: User conectado');
+    
+    const products = await ProductManagerServer.getProducts();
+    
+  socket.emit('initialProducts', products);// Emitir la lista de productos actual al cliente que se conecta
+    
 
     socket.on('newProduct', (newProduct)=>{ //debe escuchar el evento emitido por el cliente que trae el objeto newProduct
         ProductManagerServer.addProducts(newProduct);

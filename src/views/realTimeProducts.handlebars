@@ -3,6 +3,8 @@
     <h1>Productos disponibles en tiempo real</h1>
 </div>
 
+<div id="realTimeGallery" class="gridContainer"></div>
+
 <div class="loadProduct">
     <div class="productPost">
     <h2>Cargar Producto</h2>
@@ -26,7 +28,19 @@
         <button type="submit">Guardar Producto</button>
   </form>
 </div>
-<div id="realTimeGallery"></div>
+
+<div class="deleteProduct">
+    <div class="productPost">
+    <h2>Eliminar Producto</h2>
+    </div>
+ <form id="deleteForm">
+    <input type="text" id="productIdDelete" placeholder="id del producto" required>
+    <br>
+    <button class="card-button" type="submit">Buscar Producto</button>
+    <button class="card-button" type="submit">Eliminar Producto</button>
+ </form>
+</div>
+
 
 
 
