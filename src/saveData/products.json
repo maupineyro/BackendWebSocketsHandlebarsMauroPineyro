@@ -78,35 +78,13 @@
   },
   {
     "title": "objeto 8",
-    "description": "producto 8",
-    "code": "1235643",
+    "description": "121212",
+    "code": "13543",
     "price": "12",
-    "status": true,
-    "stock": "122",
-    "category": "122",
-    "thumbnail": "imagen pantalon  8",
-    "id": "028959ec"
-  },
-  {
-    "title": "objeto 9",
-    "description": "descriptc",
-    "code": "qwq23",
-    "price": "564",
-    "status": true,
-    "stock": "1212",
-    "category": "1212",
-    "thumbnail": "img pantalon 9",
-    "id": "937d3781"
-  },
-  {
-    "title": "titulo 10 ",
-    "description": "bla bla",
-    "code": "1235643111",
-    "price": "1",
     "status": true,
     "stock": "1",
     "category": "1",
-    "thumbnail": "img",
-    "id": "d53480f9"
+    "thumbnail": "imagen pantalon",
+    "id": "d70fc622"
   }
 ]

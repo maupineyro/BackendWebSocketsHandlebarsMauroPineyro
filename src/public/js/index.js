@@ -3,7 +3,7 @@
 //socket (cliente)
 let socket = io ()// este ya genera la conexión del evento 'connection'
 
-
+//añadir product
 const productForm = document.getElementById('productForm');
     productForm.addEventListener('submit', (event) => {
       event.preventDefault(); // Evita que el formulario se envíe al recargar
@@ -23,12 +23,26 @@ const productForm = document.getElementById('productForm');
       socket.emit('newProduct', newProduct); // Enviar datos del producto al servidor
       productForm.reset(); // Limpiar el formulario
     });
-
-  // Escuchar el evento 'initialProducts'
-  socket.on('initialProducts', (products) => {
+  
+  socket.on('initialProducts', (products) => {// Escuchar el evento 'initialProducts'
    
     render(products); // Actualizar la galería de productos en el cliente
   });
+
+  //eliminar product
+  const deleteForm = document.getElementById('deleteForm');
+  const idInput = document.getElementById('idInput');
+  const deleteButton = document.getElementById('deleteButton');
+  
+  deleteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+  
+      socket.emit('deleteProduct', idInput.value);
+  
+      deleteForm.reset();
+  });
+
+
 
     
 //funciones
